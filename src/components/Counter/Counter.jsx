@@ -3,7 +3,7 @@ import "./contador.css"
 import { blueGrey } from '@mui/material/colors';
 
 
-const Contador = () => {
+const Counter = () => {
 
     let [Count, setCount] = useState(0)
 
@@ -29,4 +29,4 @@ const Contador = () => {
     )
 }
 
-export default Contador
+export default Counter

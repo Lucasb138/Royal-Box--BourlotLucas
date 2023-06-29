@@ -1,21 +1,25 @@
 import ItemList from '../components/ItemList/ItemList'
 import { useEffect, useState } from "react";
+import {collection, getDocs, getFirestore} from "firebase/firestore"
 import { useParams } from "react-router-dom";
 
 const ItemListPage = () => {
-    const URL = "https://fakestoreapi.com/products"
     const {category} = useParams()
     const [product, setProduct] = useState([])
-    
-    const getProducts = async () => {
-        const response = await fetch(URL)
-        const data = await response.json();
-        console.log(data);
-        return data
-    }
+
     useEffect(() => {
-        getProducts().then((product) => setProduct(product))
-    }, [])
+        const db = getFirestore();
+        const itemsCollection = collection(db, "Products");
+        
+        getDocs(itemsCollection).then((snapshot) => {
+          const docs = snapshot.docs.map((doc) => {
+            return { id: doc.id, ...doc.data() };
+          });
+          
+          console.log(docs);
+          setProduct(docs);
+        });
+      }, []);
 
     const categoryFilter = product.filter((product) => product.category === category)
     console.log(categoryFilter)

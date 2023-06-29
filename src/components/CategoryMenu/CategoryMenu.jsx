@@ -38,10 +38,10 @@ export default function CategoryMenu() {
           'aria-labelledby': 'basic-button',
         }}
       >
-        <Link to= {`/category/${"men's clothing"}`} className='category'><MenuItem onClick={handleClose}>Men's clothing</MenuItem></Link>
-        <Link to= {`/category/${"women's clothing"}`} className='category'><MenuItem onClick={handleClose}>Women's clothing</MenuItem></Link>
-        <Link to= {`/category/${"electronics"}`} className='category'><MenuItem onClick={handleClose}>Electronics</MenuItem></Link>
-        <Link to= {`/category/${"jewelery"}`} className='category'><MenuItem onClick={handleClose}>Jewelry</MenuItem></Link>
+        <Link to= {`/category/${"refrigeration"}`} className='category'><MenuItem onClick={handleClose}>Refrigeration</MenuItem></Link>
+        <Link to= {`/category/${"cooking"}`} className='category'><MenuItem onClick={handleClose}>Cooking</MenuItem></Link>
+        <Link to= {`/category/${"laundry"}`} className='category'><MenuItem onClick={handleClose}>Laundry</MenuItem></Link>
+        <Link to= {`/category/${"mattresses"}`} className='category'><MenuItem onClick={handleClose}>mattresses</MenuItem></Link>
       </Menu>
     </div>
   );

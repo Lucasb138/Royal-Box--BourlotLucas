@@ -1,28 +1,29 @@
-import Item from "../Item/Item"
-import "./itemList.css"
+    import Item from "../Item/Item"
+    import "./itemList.css"
 
 
 
-const ItemList = ({product}) => { 
+    const ItemList = ({product}) => { 
 
-    return (
-        <>
-            <section className="itemList">
-                {product.map((product) => {
-                    return (
-                        <Item
-                            key={product.id}
-                            id= {product.id}
-                            title={product.title}
-                            price={product.price}
-                            image={product.image}
-                        ></Item>
-                    )
-                })}
-            </section>
 
-        </>
-    )
-}
+        return (
+            <>
+                <section className="itemList">
+                    {product.map((product) => {
+                        return (
+                            <Item
+                                key={product.id}
+                                id= {product.id}
+                                name={product.name}
+                                price={product.price}
+                                image={product.image}
+                            ></Item>
+                        )
+                    })}
+                </section>
 
-export default ItemList
+            </>
+        )
+    }
+
+    export default ItemList

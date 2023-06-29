@@ -5,11 +5,14 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
 import {useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import { CartContext } from "../../context/ShoppingCartContext";
 
 
 
-const Item = ({id, price, title, image,}) => {
+const Item = ({id, price, name, image,}) => {
   const navigate = useNavigate();
+
   return (
     <>
     <div className="card">
@@ -19,12 +22,12 @@ const Item = ({id, price, title, image,}) => {
           component="img"
           height="250"
           image= {image}
-          alt={title}
+          alt={name}
           style={{ backgroundPosition: "cover",}}
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
-          {title}
+          {name}
           </Typography>
           <Typography variant="body2" color="text.secondary">
           ${price}

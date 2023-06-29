@@ -5,13 +5,14 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
 import "./ItemDetail.css"
-import { useState } from 'react';
-import Contador from '../Contador/Contador';
+import Counter from '../Counter/Counter';
 
 
-const ItemDetail = ({title, image, description, price}) => {
+const ItemDetail = ({name, image, price, color, size}) => {
 
+  const detail = size? `Size: ${size}` : `Color: ${color}`; 
   return (
+  
     <div className= "DetailedProduct">
 
 <Card sx={{ maxWidth: 380 }} >
@@ -19,16 +20,16 @@ const ItemDetail = ({title, image, description, price}) => {
           component="img"
           height="340"
           image={image}
-          alt={title}
+          alt={name}
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
-            {title} - <Typography sx={{color: "green"}}>${price}</Typography>
+            {name} - <Typography sx={{color: "green"}}>${price}</Typography>
           </Typography>
           <Typography variant="body2" color="text.secondary">
-            {description}
+            {detail}
           </Typography>
-          <Contador></Contador>
+          <Counter></Counter>
         </CardContent>
 
     </Card>
